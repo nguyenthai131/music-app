@@ -1,0 +1,362 @@
+@import './abstracts/variables' ;
+@import './abstracts/mixin' ;
+@import './layout/typography' ;
+@import './bases/bases' ;
+@import './components/buttons' ;
+@import './components/actived' ;
+@import './components/animated' ;
+
+
+
+:root {
+    --lightWidth: 0% ;
+}
+
+
+.app {
+    display: flex ;
+    flex-direction: column ;
+    width: 40rem ;
+    height: 85rem ;
+    margin: 0 auto ;
+    background-color: $color-primary-dark ;
+    border-radius: .2rem ;
+    box-shadow: .1rem .2rem 1.5rem rgba($color-black , .2);
+    padding: 2rem 1.6rem ;
+
+    @include respond(tab-port) {
+        width: 80vw;
+        height: 100vh ;
+        padding: 1% 5% ;
+    }
+
+    @include respond(phone) {
+        width: 100vw ;
+        padding: 1% 3% ;
+    }
+
+    
+    &__top {
+        display: flex ;
+        flex-direction: column ;
+        width: 100% ;
+        height: 65%;
+        align-items: center;
+
+        @include respond(tab-port) {
+            height: 60% ;
+        }
+
+        @include respond(phone) {
+            height: 65% ;
+            padding-top: 4%;
+        }
+
+    } 
+
+
+    &__playing-thumb-box {
+        display: flex;
+        justify-content: center ;
+        width: 100% ;
+        height: 55% ;  
+
+        @include respond(tab-port) {
+            height: 40% ;
+            width: 68%;
+        } ;
+        
+        @include respond(phone) {
+            height: 50% ;
+            width: 80% ;
+        }; 
+
+        @include respond (small-phone) {
+            height: 60% ;
+            width: 90% ;
+        }
+
+    }   
+    
+    &__playing-photo { 
+        width:95%;
+        background-size: cover;
+        background-position: center;
+        border-radius: 50% ;
+        object-fit: cover;
+        padding-top: 100% ;
+
+        @include respond(phone) {
+            width: 100% ;
+        }
+    }
+
+
+    &__heading-box {
+        width: 100% ;
+        margin-top: 25% ;
+        color: $color-white ;
+        padding: 1.6rem 0 ;
+        text-align: center ;
+
+        @include respond(phone) {
+            margin-top: 20% 
+        }
+
+    }
+
+    &__playing-name {
+        font-size: 1.8rem;
+        margin-bottom: .8rem ;
+        text-transform: capitalize;
+
+        @include respond(phone) {
+            font-size: 2.2rem ;
+        }
+
+
+    }
+
+    &__playing-artist {
+        font-size:1.5rem ;
+        text-transform: capitalize;
+
+        @include respond(phone) {
+            font-size: 1.8rem ;
+        }
+
+    }
+
+    &__time-bar {
+        position: relative;
+        width: 100% ;
+        height: .4rem ;
+        appearance: none ;
+        border-radius: 5rem ;
+        border: none ;
+        outline: none ;
+        background: linear-gradient(to right,
+        #fa2fc7 0% ,
+        #b30452 0% ,
+        #636363 0% ,
+        #636363 100% );  
+        transition: background .1s ease-in-out;  
+
+        @include respond(phone) {
+            width: 90% ;
+            margin: 1rem 0 ;
+        }
+
+
+        &::-webkit-slider-thumb {
+            appearance: none;
+            width: 1.6rem ;
+            height: 1.6rem ;
+            border: .3rem solid $color-white;
+            border-radius: 100% ;
+            cursor: pointer ;
+            background:$color-pink ;
+            box-shadow: 0 0 1rem .3rem rgba($color-pink , .6);
+        }
+
+        &::after {
+            display: block;
+            content: "";
+            height: 100% ;
+            width: var(--lightWidth) ;
+            position: absolute;
+            top: 0 ;
+            left: 0 ;
+            border-radius: 5rem ;
+            box-shadow: 0 0 1rem .3rem rgba($color-pink , .6);
+            
+        }
+
+    }
+ 
+    &__playing-button {
+        margin-top: 2rem ;
+        display: flex ;
+        align-items: center ;
+        justify-content: space-around ;
+        column-gap: 3rem ;
+
+        @include respond(phone) {
+            column-gap: 4.5rem ;
+        }
+
+
+    }
+
+    &__playing-song {
+        display: none ;
+    }
+
+    &__bottom {
+        position: relative;
+        height: 30% ;
+        margin-top: 2rem ;
+    }
+    
+    &__line {
+        position: absolute ;
+        top: 0 ;
+        left: 50% ;
+        width: 100% ;
+        margin-top: 2rem ;
+    }
+    
+    &__list-box {
+        margin-top: 10% ;
+        overflow-y: scroll ;
+        scroll-behavior: smooth ;
+        height: 90% ;
+
+        &::-webkit-scrollbar {
+            width: .4rem ;
+            background-color: rgba($color-purple-light , .2) ;
+            border-radius: 2rem ;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            display: block ;
+            background-color: rgba($color-purple-medium,.8);
+            border-radius: 5rem ;
+        
+        }
+
+    }
+
+    &__list-songs {
+        list-style: none ;
+        padding: 1rem 1.6rem ;
+    }
+
+    &__song-box {
+        width: 92% ;
+        height: 10rem; 
+        margin:0 auto ;
+        position: relative;
+        display: flex ;
+        padding: 1% 3% ;
+        border-radius: 2rem ;
+        align-items: center;
+        justify-content: center ;
+        flex-wrap: nowrap;
+        background-image: linear-gradient(to right , 
+        rgba($color-purple-dark,.4),
+        rgba($color-purple-medium, .6) );
+        box-shadow: .1rem .1rem 1rem .1rem rgba($color-white , .15);
+        transition: all .3s;
+        cursor: pointer;
+
+        @include respond(phone) {
+            width: 88%;
+        }
+
+        &:not(:first-child) {
+            margin-top: 3rem ;
+        }
+
+    }
+
+    &__option {
+        display: flex ;
+        width: 2rem ;
+        height: 2rem ;
+        border-radius: 50% ;
+        font-size: 1.4rem ;
+        justify-content: center ;
+        align-items: center ;
+        position: absolute ;
+        top: 1rem;
+        right: 1rem ;
+        background-color: transparent;
+        border: none ;
+        outline: none ;
+        box-shadow: .1rem .1rem 1.5rem .1rem rgba($color-black , .1);
+        background-color: rgba($color-white , .15); 
+        transition: all .2s;
+        cursor: pointer;
+
+        &:hover {
+            box-shadow: .1rem .2rem 1.5rem .1rem rgba($color-black , .2);
+            background-color: rgba($color-white , .8); 
+        }
+
+
+    }
+
+    &__song-thumb {
+        display: flex ;
+        align-items: center;
+        width: 23% ;
+        height: 90% ;
+    }
+    
+    
+    &__song-img {
+        width: 100%;
+        border-radius: 50% ;
+        padding-top: 100%;
+        background-size: cover;
+        background-position: center;
+    }
+
+    &__song-info {
+        width: 60%;
+        height: 100% ;
+        display: flex ;
+        flex-direction: column ;
+        justify-content: center ; 
+        flex-grow: 1 ;
+        margin-left: 3% ;
+        padding: 0 3% ;
+        color: $color-white ;
+        line-height: 1.5;
+
+        @include respond(phone) {
+            line-height: 1;
+        }
+
+    }
+
+    &__song-name-box {
+        display: inline-block ;
+        position: relative;
+        white-space: nowrap ;
+        height: 40% ;
+        width: 90% ;
+        font-size: 1.8rem ;
+        text-transform: capitalize;
+        font-weight: 400 ;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__song-name-text {
+        top: 0 ;
+        left : 0 ;
+    }
+
+
+    &__song-artist-box {
+        font-size: 1.2rem ;
+        font-style: italic ;
+        opacity: .7;
+
+        @include respond(phone) {
+            font-size: 1.5rem ;
+        }
+
+    }
+
+}
+
+
+
+
+
+
+
+

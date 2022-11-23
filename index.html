@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/vendors/Normalize_CSS/normalize.css">
+    <link rel="stylesheet" href="./assets/css/vendors/font awesome/css/all.css">
+    <link rel="stylesheet" href="./assets/css/style/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <div class="app">
+
+            <div class="app__top">
+
+                <div class="app__playing-thumb-box">
+
+                    <div class="app__playing-photo"></div>
+
+                </div>
+
+                <div class="app__heading-box">
+                    <h3 class="app__playing-name"></h3>
+
+                    <p class="app__playing-artist"></p>
+                </div>
+
+                <input type="range" step="1" min="0" max="100" start="0" value="0" class="app__time-bar">
+
+                <audio src="" class="app__playing-song"></audio>
+
+
+                <div class="app__playing-button">
+
+                    <i class="fa-solid fa-repeat btn btn--function app__repeat"></i>
+
+                    <i class="fa-solid fa-backward btn btn--function app__previous"></i>
+
+                    <button class="btn btn--play">
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+
+                    <i class="fa-solid fa-forward btn btn--function app__forward"></i>
+
+                    <i class="fa-solid fa-shuffle btn btn--function app__random"></i>
+
+                </div>
+
+            </div>
+
+            <div class="app__bottom">
+
+                <div class="app__line">
+                </div>
+
+                <div class="app__list-box">
+
+                    <ul class="app__list-songs">
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="/assets/script/app.js"></script>
+
+</body>
+
+</html>

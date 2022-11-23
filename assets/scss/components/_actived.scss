@@ -1,0 +1,17 @@
+
+.btn-active {
+    color: $color-pink ;
+    transform: scale(1.2);
+    text-shadow: 0 0 .5rem rgba($color-white , .3);
+
+}
+
+
+.song-active {
+    transform: scale(1.08);
+    background: linear-gradient(to bottom ,
+    rgba($color-pink , .6) 40% ,
+    rgba($color-purple-dark, .5) 
+    ) !important;
+    box-shadow: 0 .1rem 1.6rem .1rem rgba($color-pink , .5) !important;
+}

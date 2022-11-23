@@ -1,0 +1,46 @@
+
+html {
+    font-family: 'Roboto' ,sans-serif;
+    font-size: 62.5% ;
+    text-rendering: optimizeLegibility ; 
+
+    @include respond(tab-port) {
+        font-size: 56% ;
+    }
+
+    @include respond(phone) {
+        font-size: 50% ;
+    }
+
+
+} ;
+
+
+body {
+    max-width: 1600px ;
+    font-size: 1.6rem ;
+    box-sizing: border-box;
+    background-color: $color-white ;
+    line-height: 1.7 ;
+
+    @include respond(tab-port) {
+        line-height: 1.5 ;
+        width: 100vw ;
+        overflow: hidden  ;
+    }
+
+} ;
+
+
+* ,
+*::before ,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit ;
+}
+
+
+
+
+
