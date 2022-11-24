@@ -31,7 +31,8 @@
     }
 
     @include respond(phone) {
-        width: 95vw ;
+        width: 100vw ;
+        height: 90vh ;
         padding: 1% 3% ;
     }
 

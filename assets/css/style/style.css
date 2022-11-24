@@ -71,7 +71,7 @@ body {
   height: 5rem;
   font-size: 2.4rem;
   border-radius: 50%;
-  background-color: #fff;
+  background-color: #fff !important;
 }
 .btn--play i {
   margin-left: 5%;
@@ -81,6 +81,7 @@ body {
     width: 6rem;
     height: 6rem;
     font-size: 2.8rem;
+    background-color: #fff;
   }
 }
 .btn--function {
@@ -152,7 +153,8 @@ body {
 }
 @media only screen and (max-width: 480px) {
   .app {
-    width: 95vw;
+    width: 100vw;
+    height: 90vh;
     padding: 1% 3%;
   }
 }
