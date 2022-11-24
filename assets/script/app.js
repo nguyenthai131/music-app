@@ -1,7 +1,4 @@
 
-
-
- 
 var musicApp = {
     isPlaying: false ,
     currentIndex: 0,
@@ -296,9 +293,6 @@ var musicApp = {
     } ,
     handle : function () {
 
-        this.loadListSongs() ;
-        this.loadCurrentSong() ;
-
         var _this = this  ;
         var audio =  document.querySelector('.app__playing-song') ; 
         var btnPlay = document.querySelector('.btn--play') ;
@@ -443,9 +437,11 @@ var musicApp = {
     } ,
     start : function () {
         this.handle() ;
+        this.loadListSongs() ;
+        this.loadCurrentSong() ;
+
     }
 }
-
 
 musicApp.start() ;
 
