@@ -8,6 +8,9 @@
         overflow: hidden ;
     }
 
+    @include respond(phone) {
+        padding-top: 2% ;
+    }
 }
 
 

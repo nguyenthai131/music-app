@@ -264,8 +264,7 @@ var musicApp = {
     ,
     timebarAnimated: function() {
         var timeBar = document.querySelector('.app__time-bar') ;
-        var value = (timeBar.value - timeBar.min)/(timeBar.max - timeBar.min) * 100 ;
-        
+        var value = (timeBar.value - timeBar.min)/(timeBar.max - timeBar.min) * 100 ;  
 
         timeBar.style.setProperty('--lightWidth',`${timeBar.value}%`)
         
