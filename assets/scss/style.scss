@@ -231,6 +231,9 @@
     &__list-songs {
         list-style: none ;
         padding: 1rem 1.6rem ;
+        transition: all 1s ease-in ;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
     }
 
     &__song-box {
@@ -248,7 +251,7 @@
         rgba($color-purple-dark,.4),
         rgba($color-purple-medium, .6) );
         box-shadow: .1rem .1rem 1rem .1rem rgba($color-white , .15);
-        transition: all .3s;
+        transition: all .4s ease-in;
         cursor: pointer;
 
         @include respond(phone) {
