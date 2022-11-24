@@ -273,6 +273,7 @@ var musicApp = {
         } ;
         timeBar.style.background = `linear-gradient(to right,#fa2fc7 0% ,#b30452 ${value}% ,#636363 ${value}% ,#636363 100% )` ;
     } , 
+
     cdthumbAnimated: function() {
         var audio =  document.querySelector('.app__playing-song') ; 
         var cdThumb = document.querySelector('.app__playing-photo') ;
@@ -342,6 +343,10 @@ var musicApp = {
 
         })
 
+        timeBar.oninput = function() {
+            _this.timebarAnimated() ;
+            audio.play() ;
+        }
 
         audio.onplay = function() {
             cdRotate.play() ;

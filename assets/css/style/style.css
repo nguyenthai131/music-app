@@ -71,7 +71,7 @@ body {
   height: 5rem;
   font-size: 2.4rem;
   border-radius: 50%;
-  background-color: #fff !important;
+  background-color: #fff;
 }
 .btn--play i {
   margin-left: 5%;
@@ -146,7 +146,7 @@ body {
 }
 @media only screen and (max-width: 600px) {
   .app {
-    width: 80vw;
+    width: 90vw;
     height: 95vh;
     padding: 1% 5%;
   }
@@ -155,7 +155,7 @@ body {
   .app {
     width: 100vw;
     height: 90vh;
-    padding: 1% 3%;
+    padding: 4% 3% 2%;
   }
 }
 .app__top {
@@ -256,7 +256,7 @@ body {
   border: none;
   outline: none;
   background: linear-gradient(to right, #fa2fc7 0%, #b30452 0%, #636363 0%, #636363 100%);
-  transition: background 0.1s ease-in-out;
+  transition: background 0.15s ease-in-out;
 }
 @media only screen and (max-width: 480px) {
   .app__time-bar {
