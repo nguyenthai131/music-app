@@ -1,0 +1,60 @@
+
+
+.btn {
+
+    & ,
+    &:visited {
+        display: flex ;
+        justify-content: center ;
+        align-items: center ;
+        border: none ;
+        outline: none ;
+        cursor: pointer;
+        transition: all .3s;
+    }
+
+    &:active {
+        transform: scale(.8); 
+    }
+
+    &--play {
+        width: 6rem ;
+        height: 6rem ;
+        border-radius: 50% ;
+        font-size: 2.4rem ;
+        color: $color-white ;
+        background-image: linear-gradient(to right bottom , 
+        rgba($color-pink-dark ,1) 1% ,
+        rgba($color-purple-medium, .8) ,
+        rgba($color-blue-light , .9));
+        box-shadow: 0 0 1.2rem .4rem rgba($color-white , .2);
+    }
+
+
+}
+
+.btn-icon {
+
+    & ,
+    &:visited {
+        display: flex ;
+        justify-content: center ;
+        align-items: center ;
+        font-size: 2.4rem ;
+        color: $color-white ;
+        transition: all .2s ;    
+        cursor: pointer;
+    }
+
+    &:active {
+        transform: scale(.9);   
+    }
+
+
+}
+
+.active-icon {
+    color: $color-pink-dark !important ;
+    text-shadow: 0 0 1.5rem rgba($color-red , .8 );    
+}
+

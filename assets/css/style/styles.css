@@ -1,0 +1,409 @@
+@keyframes movingText {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-5rem);
+  }
+  100% {
+    transform: translateX(0rem);
+  }
+}
+html {
+  font-family: "Lato", sans-serif;
+  font-size: 62.5%;
+  background-color: #fff;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-size: 1.6rem;
+  box-sizing: border-box;
+  line-height: 1.7;
+  color: #000;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+.section-app {
+  width: 100%;
+}
+
+.btn, .btn:visited {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.btn:active {
+  transform: scale(0.8);
+}
+.btn--play {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  font-size: 2.4rem;
+  color: #fff;
+  background-image: linear-gradient(to right bottom, #e41a9e 1%, rgba(143, 99, 186, 0.8), rgba(41, 213, 238, 0.9));
+  box-shadow: 0 0 1.2rem 0.4rem rgba(255, 255, 255, 0.2);
+}
+
+.btn-icon, .btn-icon:visited {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.4rem;
+  color: #fff;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.btn-icon:active {
+  transform: scale(0.9);
+}
+
+.active-icon {
+  color: #e41a9e !important;
+  text-shadow: 0 0 1.5rem rgba(225, 26, 157, 0.8);
+}
+
+.app {
+  width: 40rem;
+  height: 85rem;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #1a0938;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.app__nav {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: 5rem;
+  align-items: center;
+}
+.app__nav-text-box {
+  flex-grow: 1;
+  text-align: center;
+}
+.app__nav-heading-text {
+  font-size: 2rem;
+  text-transform: capitalize;
+  color: #fff;
+}
+.app__btn-home, .app__btn-menu {
+  flex-shrink: 0;
+  font-size: 1.8rem;
+  padding: 0.5rem;
+  height: 3rem;
+  width: 3rem;
+  color: #fff;
+  border-radius: 50%;
+  background-color: transparent;
+}
+.app__info-box {
+  width: 100%;
+  flex-grow: 1;
+  position: relative;
+}
+.app__playing-box, .app__list-song-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.app__playing-box {
+  display: inline-block;
+  opacity: 1;
+  visibility: visible;
+}
+.app__playing-info {
+  width: 100%;
+  height: 65%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10%;
+}
+.app__playing-photo {
+  width: 100%;
+  height: 80%;
+}
+.app__cd-thumb {
+  width: 100%;
+  padding-bottom: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+}
+.app__playing-text-box {
+  width: 100%;
+  height: 15%;
+  color: #fff;
+  text-align: center;
+  text-transform: capitalize;
+}
+.app__playing-name {
+  font-size: 2rem;
+}
+.app__playing-artist {
+  font-size: 1.4rem;
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+.app__playing-control {
+  width: 100%;
+  height: 35%;
+}
+.app__time-bar {
+  position: relative;
+  --width: 0% ;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 100%;
+  height: 0.3rem;
+  border-radius: 5rem;
+  background-image: linear-gradient(to right, #8f63ba 0%, #e11a9d 0%, #fff 0%, #fff 100%);
+  z-index: 5;
+}
+.app__time-bar::after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  height: 100%;
+  width: var(--width);
+  background-color: transparent;
+  box-shadow: 0 0 0.8rem 0.1rem rgba(225, 26, 157, 0.7);
+}
+.app__time-bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+          appearance: none;
+  border-radius: 100%;
+  background-color: #e11a9d;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.app__control-button {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 10%;
+  align-self: center;
+  -moz-column-gap: 10%;
+       column-gap: 10%;
+}
+.app__list-song-box {
+  display: inline-block;
+  flex-direction: column;
+  padding: 2rem 0.2rem 0rem;
+  color: #fff;
+  width: 100%;
+  row-gap: 3rem;
+  opacity: 0;
+  visibility: hidden;
+}
+.app__list-songs {
+  list-style: none;
+  width: 100%;
+  height: 65%;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: 1.6rem 0.5rem 0.5rem;
+}
+.app__list-songs::-webkit-scrollbar {
+  -webkit-appearance: none;
+          appearance: none;
+  height: 100%;
+  width: 0;
+}
+.app__song-box {
+  display: flex;
+  padding: 0.1rem 2rem;
+  flex-wrap: nowrap;
+  height: 10rem;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 15rem;
+  box-shadow: 0 0 1rem 0.1rem rgba(225, 26, 157, 0.4);
+  align-items: center;
+  -moz-column-gap: 8%;
+       column-gap: 8%;
+  cursor: pointer;
+}
+.app__song-box:not(:first-child) {
+  margin-top: 2.4rem;
+}
+.app__song-thumb {
+  height: 100%;
+  width: 25%;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+.app__song-photo {
+  width: 100%;
+  padding-bottom: 100%;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: none;
+}
+.app__song-info {
+  height: 100%;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 0.8rem;
+}
+.app__info-text-box {
+  display: inline-block;
+  width: 90%;
+  height: 30%;
+  position: relative;
+  overflow: hidden;
+}
+.app__song-info-name, .app__song-info-artist {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  text-transform: capitalize;
+}
+.app__song-info-name {
+  font-size: 1.7rem;
+}
+.app__song-info-artist {
+  font-size: 1.4rem;
+}
+.app__small-playing-song-box {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: -2rem;
+  padding: 2rem;
+  width: 100%;
+  height: 34%;
+  z-index: 10;
+  color: #000;
+  border-radius: 5rem 5rem 0 0;
+  background-color: white;
+  text-transform: capitalize;
+}
+.app__small-photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5rem 5rem 0 0;
+  filter: blur(0.3rem) brightness(40%);
+}
+.app__small-info-box {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.app__small-info-text-box {
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+.app__small-playing-name, .app__small-playing-artist {
+  color: #fff;
+  width: 100%;
+}
+.app__small-playing-name {
+  font-size: 2rem;
+  text-transform: capitalize;
+  line-height: 2;
+}
+.app__small-playing-artist {
+  font-size: 1.5rem;
+  font-style: italic;
+}
+.app__small-ctr-box {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3.2rem;
+}
+.app__small-time-bar {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  --width: 0 ;
+  width: 100%;
+  height: 0.2rem;
+  border-radius: 10rem;
+  position: relative;
+  background-image: linear-gradient(to right, #29d5ee 0%, #8f63ba 0%, #fff 0%, #fff 100%);
+}
+.app__small-time-bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+          appearance: none;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: aqua;
+  border-radius: 50%;
+}
+.app__small-time-bar::after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  height: 100%;
+  width: var(--width);
+  background-color: transparent;
+  box-shadow: 0 0 0.8rem 0.1rem rgba(41, 213, 238, 0.7);
+}
+.app__s-button-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 10%;
+       column-gap: 10%;
+  width: 100%;
+  flex-grow: 1;
+}
+.app__s-button-box button {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+}
+.app__s-button-box button:nth-child(2) {
+  width: 5.5rem;
+  height: 5.5rem;
+  font-size: 2.4rem;
+}
+.app__s-button-box button:nth-child(2) i {
+  margin-left: 5%;
+}
+
+.active-text {
+  color: #e41a9e !important;
+  text-shadow: 0 0rem 0.7rem rgba(225, 26, 157, 0.8) !important;
+}
+
+.active {
+  background-color: #e41a9e !important;
+  transform: scale(1.08);
+  transition: all 0.3s;
+}/*# sourceMappingURL=styles.css.map */

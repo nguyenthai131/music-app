@@ -1,0 +1,14 @@
+
+
+.active-text {
+    color: $color-pink-dark !important;
+    text-shadow: 0 0rem .7rem rgba($color-red , .8) !important;
+}
+
+
+.active {
+    background-color: $color-pink-dark !important; 
+    transform: scale(1.08);
+    transition: all .3s ;
+
+}

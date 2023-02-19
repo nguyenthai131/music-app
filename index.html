@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music player</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,100;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/vendors/Normalize_CSS/normalize.css">
+    <link rel="stylesheet" href="./assets/css/vendors/font awesome/css/all.css">
+    <link rel="stylesheet" href="./assets/css/style/styles.css">
+
+</head>
+
+<body>
+
+
+    <section class="section-app">
+
+        <div class="app">
+
+            <div class="app__nav">
+                <button class="btn app__btn-home">
+                    <i class="fa-solid fa-house"></i>
+                </button>
+
+                <div class="app__nav-text-box">
+                    <h3 class="app__nav-heading-text">
+                    </h3>
+                </div>
+
+                <button class="btn app__btn-menu">
+                    <i class="fa-solid fa-list-ul"></i>
+                </button>
+            </div>
+
+            <div class="app__info-box">
+
+                <div class="app__playing-box">
+
+                    <div class="app__playing-info">
+
+                        <div class="app__playing-photo">
+                            <div class="app__cd-thumb">
+                            </div>
+
+                        </div>
+
+                        <audio src="" class="app__audio"></audio>
+
+                        <div class="app__playing-text-box">
+                            <h3 class="app__playing-name">
+                            </h3>
+
+                            <p class="app__playing-artist">
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="app__playing-control">
+
+                        <input type="range" min="0" max="100" value="0" step="1" class="app__time-bar">
+
+                        <div class="app__control-button">
+
+                            <i id="repeat-button" class="fa-solid fa-arrow-rotate-right btn-icon"></i>
+
+                            <i id="back-button" class="fa-solid fa-backward btn-icon"></i>
+
+                            <button id="play-button" class="btn btn--play">
+                                <i class="fa-solid fa-play"></i>
+                            </button>
+
+                            <i id="next-button" class="fa-solid fa-forward btn-icon"></i>
+
+                            <i id="random-button" class="fa-solid fa-shuffle btn-icon"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="app__list-song-box">
+
+                    <ul class="app__list-songs">
+                    </ul>
+
+                    <div class="app__small-playing-song-box">
+                        <img alt="" class="app__small-photo">
+
+                        <div class="app__small-info-box">
+                            <div class="app__small-info-text-box">
+                                <h3 class="app__small-playing-name">
+                                </h3>
+                            </div>
+
+                            <div class="app__small-info-text-box">
+                                <p class="app__small-playing-artist"></p>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="app__small-ctr-box">
+
+                            <input type="range" min="0" max="100" value="0" step="1" class="app__small-time-bar">
+
+                            <div class="app__s-button-box">
+
+                                <button class="btn btn--back-s">
+                                    <i class="fa-solid fa-backward"></i>
+                                </button>
+
+                                <button class="btn btn--play-small">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+
+                                <button class="btn btn--next-s">
+                                    <i class="fa-solid fa-forward"></i>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <script src="./assets/script/app.js"></script>
+
+</body>
+
+</html>
