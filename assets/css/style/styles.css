@@ -15,12 +15,28 @@ html {
   background-color: #fff;
   text-rendering: optimizeLegibility;
 }
+@media only screen and (max-width: 640px) {
+  html {
+    font-size: 56%;
+    overflow: hidden;
+  }
+}
+@media only screen and (max-width: 480px) {
+  html {
+    font-size: 42.5%;
+  }
+}
 
 body {
   font-size: 1.6rem;
   box-sizing: border-box;
   line-height: 1.7;
   color: #000;
+}
+@media only screen and (max-width: 640px) {
+  body {
+    overflow: hidden;
+  }
 }
 
 *,
@@ -85,6 +101,13 @@ body {
   flex-direction: column;
   position: relative;
 }
+@media only screen and (max-width: 640px) {
+  .app {
+    width: 100%;
+    height: 100vh;
+    padding: 3rem;
+  }
+}
 .app__nav {
   display: flex;
   flex-wrap: nowrap;
@@ -101,6 +124,11 @@ body {
   text-transform: capitalize;
   color: #fff;
 }
+@media only screen and (max-width: 640px) {
+  .app__nav-heading-text {
+    font-size: 3rem;
+  }
+}
 .app__btn-home, .app__btn-menu {
   flex-shrink: 0;
   font-size: 1.8rem;
@@ -110,6 +138,13 @@ body {
   color: #fff;
   border-radius: 50%;
   background-color: transparent;
+}
+@media only screen and (max-width: 640px) {
+  .app__btn-home, .app__btn-menu {
+    font-size: 2.5rem;
+    height: 4rem;
+    width: 4rem;
+  }
 }
 .app__info-box {
   width: 100%;
@@ -154,17 +189,38 @@ body {
   text-align: center;
   text-transform: capitalize;
 }
+@media only screen and (max-width: 640px) {
+  .app__playing-text-box {
+    margin-top: 15%;
+  }
+}
 .app__playing-name {
   font-size: 2rem;
+}
+@media only screen and (max-width: 640px) {
+  .app__playing-name {
+    font-size: 3.5rem;
+  }
 }
 .app__playing-artist {
   font-size: 1.4rem;
   font-style: italic;
   margin-top: 0.8rem;
 }
+@media only screen and (max-width: 640px) {
+  .app__playing-artist {
+    font-size: 2rem;
+  }
+}
 .app__playing-control {
   width: 100%;
   height: 35%;
+  text-align: center;
+}
+@media only screen and (max-width: 640px) {
+  .app__playing-control {
+    padding: 0 1.6rem;
+  }
 }
 .app__time-bar {
   position: relative;
@@ -177,6 +233,13 @@ body {
   border-radius: 5rem;
   background-image: linear-gradient(to right, #8f63ba 0%, #e11a9d 0%, #fff 0%, #fff 100%);
   z-index: 5;
+}
+@media only screen and (max-width: 640px) {
+  .app__time-bar {
+    margin-top: 10%;
+    width: 98%;
+    height: 0.5rem;
+  }
 }
 .app__time-bar::after {
   display: block;
@@ -205,6 +268,11 @@ body {
   align-self: center;
   -moz-column-gap: 10%;
        column-gap: 10%;
+}
+@media only screen and (max-width: 640px) {
+  .app__control-button {
+    margin-top: 15%;
+  }
 }
 .app__list-song-box {
   display: inline-block;

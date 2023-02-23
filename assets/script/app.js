@@ -148,8 +148,6 @@ const app = {
 
         }) ;
 
-
-
     } ,
     loadListSongs: function() {
         const listSongs = this.songs.map((song,i) => {
@@ -429,12 +427,20 @@ const app = {
                     _this.currentIndex = index ;
                     _this.loadCurrentSong() ; 
                     handleChangeSong() ;
-
                 }
-            }
+            } ;
+
+            song.ontouchstart = function() {
+                if(index !== _this.currentIndex) {
+                    _this.currentIndex = index ;
+                    _this.loadCurrentSong() ; 
+                    handleChangeSong() ;
+                }
+            } ;
+
         }) ;
 
-        timebar.onmousedown = function() {
+        timebar.onmousedown = function(e) {
             audio.removeEventListener('timeupdate',timebarLoad) ;
         } ;
 
@@ -444,6 +450,38 @@ const app = {
                 btnPlay.click() ;
             }
         } ;
+
+        timebar.addEventListener('touchstart' ,function(e) {
+            audio.removeEventListener('timeupdate',timebarLoad) ;
+           
+        }) ;
+
+        timebar.addEventListener('touchend' ,function(e) {
+            audio.addEventListener('timeupdate',timebarLoad);
+            if(!_this.isPlaying) {
+                btnPlay.click() ;
+            }
+        }) ;
+
+        timebar.addEventListener('touchmove' ,function(e) {
+            audio.removeEventListener('timeupdate',timebarLoad) ;
+        }) ;
+
+        smallTimebar.addEventListener('touchstart' ,function(e) {
+            audio.removeEventListener('timeupdate',timebarLoad) ;
+           
+        }) ;
+
+        smallTimebar.addEventListener('touchend' ,function(e) {
+            audio.addEventListener('timeupdate',timebarLoad);
+            if(!_this.isPlaying) {
+                btnPlay.click() ;
+            }
+        }) ;
+
+        smallTimebar.addEventListener('touchmove' ,function(e) {
+            audio.removeEventListener('timeupdate',timebarLoad) ;
+        }) ;
 
         smallTimebar.onmousedown = function() {
             audio.removeEventListener('timeupdate',timebarLoad) ;

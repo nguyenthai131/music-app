@@ -5,6 +5,15 @@ html {
     background-color: $color-white ;
     text-rendering: optimizeLegibility ;
 
+    @include respond(big-phone) {
+        font-size: 56% ;
+        overflow: hidden;
+    } ;
+
+    @include respond(phone) {
+        font-size: 42.5% ;
+    } ;
+
 }
 
 
@@ -13,6 +22,12 @@ body {
     box-sizing: border-box ;
     line-height: 1.7;
     color: $color-black ;
+
+    @include respond(big-phone) {
+        overflow: hidden;
+    }
+
+
 }
 
 * ,

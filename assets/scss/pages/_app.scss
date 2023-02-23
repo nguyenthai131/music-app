@@ -8,6 +8,14 @@
     flex-direction: column ;
     position: relative;
 
+    @include respond(big-phone) {
+        width: 100% ;
+        height: 100vh ;
+        padding: 3rem ;
+    } ; 
+
+
+
     &__nav {
         display: flex;
         flex-wrap: nowrap;
@@ -15,8 +23,12 @@
         height: 5rem;
         align-items: center;
 
-    }
+        @include respond(big-phone) {
 
+
+        }
+
+    }
 
     &__nav-text-box {
         flex-grow: 1;
@@ -27,6 +39,11 @@
         font-size: 2rem;
         text-transform: capitalize;
         color: $color-white ;
+
+        @include respond(big-phone) {
+            font-size: 3rem ;
+        }
+
     }
 
 
@@ -41,6 +58,13 @@
         border-radius: 50%;
         background-color: transparent;
 
+        @include respond(big-phone) {
+            font-size: 2.5rem ;
+            height: 4rem ;
+            width: 4rem ;
+
+        }
+            
     }
 
     &__info-box {  
@@ -71,7 +95,7 @@
         flex-direction: column;
         align-items: center;
         margin-top: 10% ; 
-    }
+    } ;
 
     &__playing-photo {
         width: 100%;
@@ -93,21 +117,42 @@
         color: $color-white ;
         text-align: center ;
         text-transform: capitalize ;
+
+
+        @include respond(big-phone) {
+            margin-top: 15% ;
+        }
+
     }
     
     &__playing-name {
         font-size: 2rem ;
+
+        @include respond(big-phone) {
+            font-size: 3.5rem 
+        }
+
     }
 
     &__playing-artist {
         font-size: 1.4rem ;
         font-style: italic ;
         margin-top: .8rem ;
+
+        @include respond(big-phone) {
+            font-size: 2rem ;
+        }
+
     }
 
     &__playing-control {
         width: 100% ;
         height: 35% ;
+        text-align: center;
+
+        @include respond(big-phone) {
+            padding: 0 1.6rem ;
+        }
 
     }
 
@@ -126,6 +171,12 @@
         );
         z-index: 5 ;
         
+        @include respond(big-phone) {
+            margin-top:10% ;
+            width: 98% ;
+            height: .5rem ;
+        }
+
 
         &::after {
             display: block; 
@@ -149,6 +200,7 @@
             height: 1.2rem ;
         }
 
+
     }
     
     &__control-button {
@@ -158,6 +210,11 @@
         margin-top: 10% ;
         align-self: center;
         column-gap: 10% ;
+
+        @include respond(big-phone) {
+            margin-top: 15% ;
+        }
+
     }
 
     &__list-song-box {
