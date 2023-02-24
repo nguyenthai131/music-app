@@ -105,7 +105,6 @@ body {
   .app {
     width: 100%;
     height: 90vh;
-    padding: 3rem;
   }
 }
 .app__nav {
@@ -260,6 +259,12 @@ body {
   width: 1.2rem;
   height: 1.2rem;
 }
+@media only screen and (max-width: 640px) {
+  .app__time-bar::-webkit-slider-thumb {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
 .app__control-button {
   display: flex;
   width: 100%;
@@ -317,6 +322,17 @@ body {
 }
 .app__song-box:not(:first-child) {
   margin-top: 2.4rem;
+}
+@media only screen and (max-width: 640px) {
+  .app__song-box:not(:first-child) {
+    margin-top: 3.6rem;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .app__song-box {
+    height: 14rem;
+    width: 88%;
+  }
 }
 .app__song-thumb {
   height: 100%;

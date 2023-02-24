@@ -152,7 +152,7 @@ const app = {
     loadListSongs: function() {
         const listSongs = this.songs.map((song,i) => {
             return `
-            <li class="app__song-box">
+            <li class="app__song-box" aria-labelby="${song.name}">
 
             <div class="app__song-thumb">
                 <div class="app__song-photo" style="background-image: url('${song.img}') ">
@@ -451,35 +451,41 @@ const app = {
             }
         } ;
 
-        timebar.addEventListener('touchstart' ,function(e) {
+        timebar.addEventListener('touchstart' ,function() {
             audio.removeEventListener('timeupdate',timebarLoad) ;
-           
         }) ;
 
-        timebar.addEventListener('touchend' ,function(e) {
+        timebar.addEventListener('click' ,function() {
+            audio.removeEventListener('timeupdate',timebarLoad) ;
+        }) ;
+
+        timebar.addEventListener('touchend' ,function() {
             audio.addEventListener('timeupdate',timebarLoad);
             if(!_this.isPlaying) {
                 btnPlay.click() ;
             }
         }) ;
 
-        timebar.addEventListener('touchmove' ,function(e) {
+        timebar.addEventListener('touchmove' ,function() {
             audio.removeEventListener('timeupdate',timebarLoad) ;
         }) ;
 
-        smallTimebar.addEventListener('touchstart' ,function(e) {
-            audio.removeEventListener('timeupdate',timebarLoad) ;
-           
+        smallTimebar.addEventListener('touchstart' ,function() {
+            audio.removeEventListener('timeupdate',timebarLoad) ; 
         }) ;
 
-        smallTimebar.addEventListener('touchend' ,function(e) {
+        smallTimebar.addEventListener('click' ,function() {
+            audio.removeEventListener('timeupdate',timebarLoad) ; 
+        }) ;
+
+        smallTimebar.addEventListener('touchend' ,function() {
             audio.addEventListener('timeupdate',timebarLoad);
             if(!_this.isPlaying) {
                 btnPlay.click() ;
             }
         }) ;
 
-        smallTimebar.addEventListener('touchmove' ,function(e) {
+        smallTimebar.addEventListener('touchmove' ,function() {
             audio.removeEventListener('timeupdate',timebarLoad) ;
         }) ;
 

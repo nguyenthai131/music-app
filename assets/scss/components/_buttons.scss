@@ -28,6 +28,14 @@
         rgba($color-purple-medium, .8) ,
         rgba($color-blue-light , .9));
         box-shadow: 0 0 1.2rem .4rem rgba($color-white , .2);
+
+        @include respond(big-phone) {
+            width: 8rem ;
+            height: 8rem ;
+
+        }
+ 
+
     }
 
 
