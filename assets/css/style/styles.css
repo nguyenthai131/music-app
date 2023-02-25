@@ -72,6 +72,13 @@ body {
   background-image: linear-gradient(to right bottom, #e41a9e 1%, rgba(143, 99, 186, 0.8), rgba(41, 213, 238, 0.9));
   box-shadow: 0 0 1.2rem 0.4rem rgba(255, 255, 255, 0.2);
 }
+@media only screen and (max-width: 640px) {
+  .btn--play {
+    width: 8rem;
+    height: 8rem;
+    font-size: 3.5rem;
+  }
+}
 
 .btn-icon, .btn-icon:visited {
   display: flex;
@@ -81,6 +88,11 @@ body {
   color: #fff;
   transition: all 0.2s;
   cursor: pointer;
+}
+@media only screen and (max-width: 640px) {
+  .btn-icon, .btn-icon:visited {
+    font-size: 3rem;
+  }
 }
 .btn-icon:active {
   transform: scale(0.9);
@@ -170,6 +182,11 @@ body {
   align-items: center;
   margin-top: 10%;
 }
+@media only screen and (max-width: 640px) {
+  .app__playing-info {
+    margin-bottom: 15%;
+  }
+}
 .app__playing-photo {
   width: 100%;
   height: 80%;
@@ -235,9 +252,8 @@ body {
 }
 @media only screen and (max-width: 640px) {
   .app__time-bar {
-    margin-top: 10%;
-    width: 98%;
-    height: 0.5rem;
+    width: 96%;
+    height: 0.8rem;
   }
 }
 .app__time-bar::after {
@@ -261,8 +277,8 @@ body {
 }
 @media only screen and (max-width: 640px) {
   .app__time-bar::-webkit-slider-thumb {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.8rem;
+    height: 1.8rem;
   }
 }
 .app__control-button {
@@ -276,7 +292,7 @@ body {
 }
 @media only screen and (max-width: 640px) {
   .app__control-button {
-    margin-top: 15%;
+    margin-top: 8%;
   }
 }
 .app__list-song-box {
@@ -341,6 +357,11 @@ body {
   align-items: center;
   z-index: 10;
 }
+@media only screen and (max-width: 640px) {
+  .app__song-thumb {
+    height: 98%;
+  }
+}
 .app__song-photo {
   width: 100%;
   padding-bottom: 100%;
@@ -356,6 +377,12 @@ body {
   flex-direction: column;
   justify-content: center;
   row-gap: 0.8rem;
+}
+@media only screen and (max-width: 640px) {
+  .app__song-info {
+    height: 90%;
+    row-gap: 0.4rem;
+  }
 }
 .app__info-text-box {
   display: inline-block;
@@ -373,8 +400,18 @@ body {
 .app__song-info-name {
   font-size: 1.7rem;
 }
+@media only screen and (max-width: 640px) {
+  .app__song-info-name {
+    font-size: 2rem;
+  }
+}
 .app__song-info-artist {
   font-size: 1.4rem;
+}
+@media only screen and (max-width: 640px) {
+  .app__song-info-artist {
+    font-size: 1.8rem;
+  }
 }
 .app__small-playing-song-box {
   position: absolute;
@@ -439,6 +476,13 @@ body {
   position: relative;
   background-image: linear-gradient(to right, #29d5ee 0%, #8f63ba 0%, #fff 0%, #fff 100%);
 }
+@media only screen and (max-width: 640px) {
+  .app__small-time-bar {
+    height: 0.5rem;
+    width: 96%;
+    margin: 0 auto;
+  }
+}
 .app__small-time-bar::-webkit-slider-thumb {
   -webkit-appearance: none;
           appearance: none;
@@ -446,6 +490,12 @@ body {
   height: 1.2rem;
   background-color: aqua;
   border-radius: 50%;
+}
+@media only screen and (max-width: 640px) {
+  .app__small-time-bar::-webkit-slider-thumb {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 }
 .app__small-time-bar::after {
   display: block;

@@ -91,7 +91,7 @@
         margin-top: 10% ; 
 
         @include respond(big-phone) {
-            margin-bottom: 2rem ;
+            margin-bottom: 15% ;
         }
 
     } ;
@@ -172,8 +172,8 @@
         z-index: 5 ;
         
         @include respond(big-phone) {
-            width: 98% ;
-            height: .5rem ;
+            width: 96% ;
+            height: .8rem ;
         }
 
 
@@ -189,8 +189,7 @@
             box-shadow: 0 0 .8rem .1rem rgba($color-red , .7);
         }
 
-
-        
+      
         &::-webkit-slider-thumb {
             appearance: none;
             border-radius: 100% ;
@@ -199,12 +198,11 @@
             height: 1.2rem ;
 
             @include respond(big-phone) {
-                width: 1.5rem ;
-                height: 1.5rem ;
+                width: 1.8rem ;
+                height: 1.8rem ;
             }
 
         }
-
 
     }
     
@@ -217,7 +215,7 @@
         column-gap: 10% ;
 
         @include respond(big-phone) {
-            margin-top: 15% ;
+            margin-top: 8% ;
         }
 
     }
@@ -231,8 +229,6 @@
         row-gap: 3rem ;
         opacity: 0 ;
         visibility: hidden;
-
-
 
     }   
 
@@ -251,6 +247,7 @@
             width: 0 ;
             
         }
+
 
     }
 
@@ -275,16 +272,16 @@
             }
 
 
-        }
+        } ;
 
         @include respond(big-phone) {
             height: 14rem ;
             width: 88% ;
 
-        }
+        };
  
 
-    }
+    };
 
     &__song-thumb {
         height: 100% ;
@@ -293,11 +290,11 @@
         align-items: center;
         z-index: 10;
 
-        @include {
-            height : 98% ;
+        @include respond(big-phone) {
+            height: 98% ;
         }
 
-    }
+    } ;  
 
     &__song-photo {
         width: 100% ;
@@ -315,6 +312,12 @@
         flex-direction: column;
         justify-content: center;
         row-gap: .8rem ;
+
+        @include respond(big-phone) {
+            height: 90% ;
+            row-gap: .4rem ;
+        }
+
 
     }
 
@@ -336,13 +339,22 @@
     }
 
 
-
     &__song-info-name {
         font-size: 1.7rem ;
+
+        @include respond(big-phone) {
+            font-size: 2rem 
+        }
+
     }
 
     &__song-info-artist {
         font-size: 1.4rem ;
+
+        @include respond(big-phone) {
+            font-size: 1.8rem ;
+        }
+
     }
 
 
@@ -425,12 +437,25 @@
         #fff 100% 
         );
 
+        @include respond(big-phone) {
+            height: .5rem ;
+            width: 96% ;
+            margin: 0 auto
+        } ;
+
         &::-webkit-slider-thumb {
             appearance: none;
             width: 1.2rem ;
             height: 1.2rem ;
             background-color: aqua;
             border-radius: 50% ;
+
+            @include respond(big-phone) {
+                width: 1.5rem ;
+                height: 1.5rem ;
+
+            }
+
         }
         
         &::after {
