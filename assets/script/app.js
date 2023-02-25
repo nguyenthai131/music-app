@@ -138,12 +138,24 @@ const app = {
         } ;
 
         Array.from(listSong).forEach((song,i) => {
+
             if(i === currentIndex) {
+                var lastIndex = listSong.length - 1 ;
                 song.classList.add('active') ;
-                song.scrollIntoView({
-                    block: 'center' ,
-                    behavior: 'smooth'
-                })
+                
+                switch(i) {
+                    case lastIndex :
+                        song.scrollIntoView({
+                            block: 'end' ,
+                            behavior: 'smooth'
+                        })
+                        break
+                    default :
+                        song.scrollIntoView({
+                            block: 'center' ,
+                            behavior: 'smooth'
+                        })
+                }
             } ;
 
         }) ;
