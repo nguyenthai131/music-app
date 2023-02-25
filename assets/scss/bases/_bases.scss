@@ -8,6 +8,7 @@ html {
     @include respond(big-phone) {
         font-size: 56% ;
         overflow: hidden;
+        height: 90vh ;
     } ;
 
     @include respond(phone) {
@@ -25,6 +26,7 @@ body {
 
     @include respond(big-phone) {
         overflow: hidden;
+        height: 90vh;
     }
 
 
